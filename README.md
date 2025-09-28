@@ -4,7 +4,7 @@ A front-end web app for tracking credit-card spending with a friendly dashboard 
 
 ---
 
-## ✨ Features
+## Features
 
 - **Accounts & Sessions**
   - Simple **Sign Up / Log In** flow with format validation
