@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/ChargesCSS.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.2/chart.umd.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-container"> <!-- Same style as the Dashboard page -->
+            <nav>
+                <div>
+                    <img src="Images/NavigationIcon.png" alt="Logo">
+                </div>
+                <div>
+                    <span onclick="passingUserToDashboard()">Home</span>
+                    <span onclick="passingUserToActions()">Actions</span>
+                </div>
+                <div>
+                    <span onclick="Disconnect()">Sign Out</span>
+                </div>
+            </nav>
+            <section>
+                <div class="dropdown">
+                    <label for="month-select">Choose a month</label>
+                    <!--Months will be created dynamically via JavaScript and appended to the dropdown list-->
+                    <select id="month-select"></select>
+                </div>
+                <div id="sum-and-chart">
+                    <!--Here will be added the total charges for the month chosen and displays a chart that details the expenses-->
+                </div>
+                <div id="graphs">
+                    <!-- Here will be displayed the graphs for showing the bar graph and pie graph providing more info on the charges -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <dialog id="successDialog">
+        <p>Disconnecting from the Dashboard</p>
+        <p>Moving to the Login page...</p>
+    </dialog>
+
+    <script src="JS/Charges.js"></script>
+</body>
+</html>

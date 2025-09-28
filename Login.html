@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="CSS/SignUpAndLogin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h1>Log in</h1>
+            <div id="inner-login-container">
+                <!-- Email -->
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Enter your email here" required>
+                <div id="emailError" class="error hidden">This field is required</div>
+                <div id="emailFormatError" class="error hidden">Please use a format like Format@Example.com</div>
+                <br>
+                <!-- Password -->
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password here" required>
+                <div id="passwordError" class="error hidden">This field is required</div>
+                <div id="passwordFormatError" class="error hidden">Password must be 8 characters, include one uppercase letter, one lowercase letter, one number, and one special character.</div>
+                <div id="emailOrPassNotFound" class="error hidden">Email or password not found! Please Try again!</div>
+
+                <button type="button" onclick="verifyLogin()">Login</button>
+            </div>
+
+            <p>Didn't register yet? <a href="SignUp.html">Sign up here!</a></p>
+        </div>
+    </div>
+
+    <dialog id="successDialog">
+        <p>Login successful!</p>
+        <p>Moving to the Dashboard page...</p>
+    </dialog>
+
+    <script src="JS/Login.js"></script>
+</body>
+</html>

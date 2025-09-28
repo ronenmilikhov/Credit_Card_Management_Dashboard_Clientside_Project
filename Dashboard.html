@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="CSS/DashboardCSS.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-container">
+            <nav> <!-- The navigation tab -->
+                <div>
+                    <img src="Images/NavigationIcon.png" alt="Logo">
+                </div>
+                <div>
+                    <span onclick="passingUserToDashboard()">Home</span>
+                    <span onclick="passingUserToActions()">Actions</span>
+                </div>
+                <div>
+                    <span onclick="Disconnect()">Sign Out</span>
+                </div>
+            </nav>
+            <section>
+                <div class="card-section">
+                    <!-- Here will be added the credit cards for the user-->
+                    <h1>Cards</h1>
+                </div>
+                <div class="summary-section">
+                    <!-- Here will be shown the charging sum for the previous month and the upcoming month-->
+                    <h2>Welcome Back!</h2>
+                    <p id="greeting"></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <dialog id="successDialog">
+        <p>Disconnecting from the Dashboard</p>
+        <p>Moving to the Login page...</p>
+    </dialog>
+
+    <dialog id="couponAdded">
+        <p>Birthday coupon added.</p>
+        <p>Happy Birthday!</p>
+    </dialog>
+    
+    <script src="JS/Dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+    body 
+    {
+        font-family: Arial, Helvetica, sans-serif; /* Global font family */
+        background-color: #f3f3f3;
+    }
+
+    .container 
+    {
+        display: flex; /* Enabling flexible layout (alignment, spacing responsiveness etc) */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-container 
+    {
+        display: flex;
+        align-items: center;
+        width: 60%;
+        background-color: white;
+        border-radius: 7px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+        flex-direction: column; /* Elements within the container are ordered in a vertical line */ 
+        padding: 20px;
+    }
+
+    h1 
+    {
+        font-size: 24px;
+    }
+
+    input 
+    {
+        margin: 10px auto; /* 10px - margin on top and bottom, auto - margin from left and right (auto = center)*/
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box; /* padding and border included in element's total width and height, prevents layout issues */
+    }
+
+    input[type="date"]
+    {
+        text-align: left; /* dd/mm/yyy aligned to the left, next to the icon */
+    }
+
+    button 
+    {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none; /* Removing the black border on the button */
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    button:hover 
+    {
+        background-color: #45a049;
+    }
+
+    .error 
+    {
+        color: red;
+        font-size: 12px;
+    }
+
+    .hidden /* Used for hiding the error messages by default */
+    {
+        display: none;
+    }
+
+    #inner-login-container 
+    {
+        width: 100%; /* Allow it to grow responsively */
+    }
+
+    @media (max-width: 576px) 
+    {
+        .login-container 
+        {
+            width: 90%;
+        }
+        h1 
+        {
+            font-size: 18px;
+        }
+    }

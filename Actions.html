@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/ActionsCSS.css">
+</head>
+<body>
+    <div class="container">
+        <!-- The same dashboard style from the Dashboard page so we didn't change the name -->
+        <div class="dashboard-container">
+            <nav>
+                <div>
+                    <img src="Images/NavigationIcon.png" alt="Logo">
+                </div>
+                <div>
+                    <span onclick="passingUserToDashboard()">Home</span>
+                    <span onclick="passingUserToActions()">Actions</span>
+                </div>
+                <div>
+                    <span onclick="Disconnect()">Sign Out</span>
+                </div>
+            </nav>
+            <section>
+                <div class="actions-container">
+                    <h1><u>Actions in your account</u></h1>
+                    <label for="file" class="file-upload-label">Load a file of your transactions</label>
+                    <input type="file" id="file" accept=".csv" class="file-upload-input" />
+                    <label for="creditcard-select">Choose your credit card</label>
+                    <!-- Credit cards will be created dynamically via javascript and appended to the dropdown -->
+                    <select id="creditcard-select"></select>
+                    <div id="fileError" class="error hidden">You did not load a file to add the transactions.</div>
+                    <button class="btn-add" onclick="loadTransactionsToCard()">Load transactions for your credit card</button>
+                    <label>Add a new credit card</label>
+                    <img src="Images/AddCardIcon.png" onclick="addCreditCardDialog()" alt="sample">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <dialog id="successDialog"> <!--Dialog for disconnecting from the Dashboard-->
+        <p>Disconnecting from the Dashboard</p>
+        <p>Moving to the Login page...</p>
+    </dialog>
+
+    <dialog id="addingCard"> <!--Dialog for adding a new Credit Card-->
+        <h3>Add a New Credit Card</h3>
+        <label for="cardNumber">Credit Card Number:</label>
+        <!-- Card Number -->
+        <br>
+        <input type="text" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" required maxlength="19" autocomplete="off">
+        <br>
+        <div id="cardNumberError" class="error hidden">Please enter a valid credit card number (XXXX-XXXX-XXXX-XXXX).</div>
+        <div id="cardNumberAlreadyExists" class="error hidden">This card number already exists in this account!</div>
+        <br>
+        <!-- Expiration Date -->
+        <label for="expirationDate">Credit Card Expiration Date (MM/YY):</label>
+        <br>
+        <input type="text" id="expirationDate" placeholder="MM/YY" required maxlength="5" autocomplete="off">
+        <div id="expirationDateError" class="error hidden">Please enter a valid expiration date (and not an expired one) in MM/YY format.</div>
+        <br>
+        <!-- Dialog buttons -->
+        <div class="dialog-buttons">
+            <button class="btn-close" onclick="CloseDialog()">Close</button>
+            <button class="btn-add" onclick="addCreditCard()">Add Credit Card</button>
+        </div>
+    </dialog>
+
+    <dialog id="fileLoaded"> <!--Dialog for showing transactions were added successfully-->
+        <p>Transactions loaded successfully for your credit card.</p>
+    </dialog>
+
+    <dialog id="cardAdded"> <!-- Dialog for showing that the card was added successfully -->
+        <p>The new credit card was added successfully.</p>
+    </dialog>
+    
+    <script src="JS/Actions.js"></script>
+</body>
+</html>

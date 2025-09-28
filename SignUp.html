@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="CSS/SignUpAndLogin.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h1>Register</h1>
+            <div id="inner-login-container">
+                <!-- Email -->
+                <label for="email">Email:</label>
+                <br>
+                <input type="text" id="email" placeholder="Enter your email here" required>
+                <div id="emailError" class="error hidden">This field is required</div>
+                <div id="emailFormatError" class="error hidden">Please use a format like Format@Example.com</div>
+                <div id="emailNotValid" class="error hidden">This email already exists!</div>
+                <br>
+
+                <!-- Password -->
+                <label for="password">Password:</label>
+                <br>
+                <input type="password" id="password" placeholder="Enter your password here" required>
+                <div id="passwordError" class="error hidden">This field is required</div>
+                <div id="passwordFormatError" class="error hidden">Password must be 8 characters, include one uppercase letter, one lowercase letter, one number, and one special character.</div>
+                <br>
+
+                <!-- Date of Birth -->
+                <label for="dob">Date of Birth:</label>
+                <br>
+                <input type="date" id="dob" required>
+                <div id="dobError" class="error hidden">You must be over 16 years old.</div>
+                <br>
+
+                <!-- Credit Card Number -->
+                <label for="cardNumber">Credit Card Number:</label>
+                <br>
+                <input type="text" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" required maxlength="19">
+                <div id="cardNumberError" class="error hidden">Please enter a valid credit card number (XXXX-XXXX-XXXX-XXXX).</div>
+                <br>
+
+                <!-- Expiration Date -->
+                <label for="expirationDate">Credit Card Expiration Date (MM/YY):</label>
+                <br>
+                <input type="text" id="expirationDate" placeholder="MM/YY" required maxlength="5">
+                <div id="expirationDateError" class="error hidden">Please enter a valid expiration date (and not an expired one) in MM/YY format.</div>
+                <br>
+
+                <button type="button" onclick="verifyRegister()">Register</button>
+            </div>
+
+            <p>Already have an account? <a href="Login.html">Log in here!</a></p>
+
+            <!-- Displaying the dialog after pressing the Register button -->
+            <dialog id="successDialog">
+                <p>Registration successful!</p>
+                <p>Moving to the Login page...</p>
+            </dialog>
+        </div>
+    </div>
+    <script src="JS/SignUp.js"></script>
+</body>
+</html>
